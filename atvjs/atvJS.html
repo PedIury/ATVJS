@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Média do Aluno</h3>
+    <label for="">AV1</label>
+    <input type="text" id="input_av1" placeholder="av1"> <br />
+    <label for="">Av2</label>
+    <input type="text" id="input_av2" placeholder="av2"> <br />
+    <button onclick="calcular()">Calcular</button>
+    <br />
+    <p id="total"></p>
+
+    <script>
+        function calcular(){
+        var av1 = document.getElementById("input_av1").value;
+        var av2 = document.getElementById("input_av2").value;
+
+         av1 = parseFloat(av1);
+         av2 = parseFloat(av2);
+
+         var peso = av2 * 2;
+         var soma = av1 + peso;
+         var total =soma / 3;
+
+         document.getElementById("total").innerHTML ="media "+ total;
+
+        }
+    </script>
+</body>
+</html>
