@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Calcular Parcelas</h3>
+    <label for="">Valor da Compra</label>
+    <input type="text" id="valor">
+    <label for="">Parcelas</label>
+    <select name="parcelado" id="parcelas">
+        <option value="12"> 12 Parcelas</option>
+        <option value="11"> 11 Parcelas</option>
+        <option value="10"> 10 Parcelas</option>
+        <option value="9"> 9 Parcelas</option>
+        <option value="8"> 8 Parcelas</option>
+        <option value="7"> 7 Parcelas</option>
+        <option value="6"> 6 Parcelas</option>
+        <option value="5"> 5 Parcelas</option>
+        <option value="4"> 4 Parcelas</option>
+        <option value="3"> 3 Parcelas</option>
+        <option value="2"> 2 Parcelas</option>
+        <option value="1"> 1 Parcelas</option>
+    </select>
+    <button onclick=calcular()>calcular</button>
+    <br />
+    <p id="resultado"></p>
+    <p id="resultado2"></p>
+    <p id="resultado3"></p>
+
+    <script>
+        function calcular(){
+            var valor = document.getElementById("valor").value;
+            var parcelas = document.getElementById("parcelas").value;
+             valor = parseFloat(valor);
+             parcelas = parseFloat(parcelas);
+            if(parcelas != 1){  
+             var juros = valor * 0.05;
+             var calculo = valor + juros;
+             var calculopar = calculo / parcelas;
+           
+            // console.log(calculo);
+            // console.log(calculopar);
+            document.getElementById("resultado").innerHTML =" valor "+ calculo;
+            document.getElementById("resultado2").innerHTML =" valor da parcela "+ calculopar;
+            document.getElementById("resultado3").innerHTML =" valor do juros "+ juros;
+        }else{
+                document.getElementById("resultado").innerHTML =" valor "+ valor;
+
+            }
+
+        }
+    </script>
+</body>
+</html>
